@@ -1,10 +1,9 @@
-package net.sherafatpour.internetconnectivitystatus.util
+package net.sherafatpour.internetconnectivitystatus.util.connection
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -12,7 +11,7 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
-class InternetConnectivityObserver(private val context: Context):ConnectivityObserver {
+class InternetConnectivityObserver(private val context: Context): ConnectivityObserver {
 
     private var connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     @RequiresApi(Build.VERSION_CODES.N)
